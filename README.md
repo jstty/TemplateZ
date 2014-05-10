@@ -3,7 +3,7 @@ This is all Javascript Template library which you define the html and template f
 [![Build Status](https://secure.travis-ci.org/jstty/js-templatez.png)](http://travis-ci.org/jstty/js-templatez)
 [![Dependency Status](https://david-dm.org/jstty/js-templatez.png?theme=shields.io)](https://david-dm.org/jstty/js-templatez)
 [![devDependency Status](https://david-dm.org/jstty/js-templatez/dev-status.png?theme=shields.io)](https://david-dm.org/jstty/js-templatez#info=devDependencies)
-#[![NPM version](https://badge.fury.io/js/js-templatez.png)](http://badge.fury.io/js/js-templatez)
+# [![NPM version](https://badge.fury.io/js/js-templatez.png)](http://badge.fury.io/js/js-templatez)
 
 Unit tests<br/>
 - Browser: test/unit/index.html<br/>
