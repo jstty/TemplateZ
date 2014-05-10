@@ -7,14 +7,12 @@ Unit tests<br/>
 
 
 TODO:
+- [ ] Create Docs (add to this ReadMe)
 - [ ] Unit tests
 - [ ] Add more comments in the code
-- [ ] Create Docs (add to this ReadMe)
 - [ ] Minified version
-- [ ] Handle tags like <br/>
+- [ ] Handle tags like &lt;br/&gt;
 - [ ] More/Better/Faster examples
 - [ ] Handle invalid data
-- [ ] Handle template styles
-
 
 Have a Nice Day!
