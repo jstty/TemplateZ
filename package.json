@@ -2,7 +2,11 @@
     "name": "webserver",
     "version": "0.0.1",
     "description": "A basic webserver",
-    "author": "joe@jstty.com",
+    "author": {
+        "name": "Joseph E. Sutton",
+        "email": "joe@jstty.com",
+        "web": "http://www.jstty.om"
+    },
     "dependencies": {
         "connect": "~2.15.0"
     },
