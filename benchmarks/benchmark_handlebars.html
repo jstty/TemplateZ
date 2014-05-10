@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script src="benchmark_data.js"></script>
+	<script src="handlebars.js"></script>
+	<script id="bench-template" type="text/x-handlebars-template">
+		<div>{{name}}'s Contact List</div>
+		<table id="testTableID">
+			<thead id="testHeaderID">
+				<tr><th>Name</th>
+					<th>Phone</th>
+				</tr>
+			</thead>
+			{{#each contactList}}
+				<tr>
+					<td>
+					{{#if friend}}
+						<b>{{name}}</b>
+					{{else}}
+						{{name}}
+					{{/if}}
+					</td>
+					<td>{{phone}}</td>
+				</tr>
+			{{/each}}
+			<tfoot>
+				<tr><th>Footer1</th>
+					<th>Footer2</th>
+				</tr>
+			</tfoot>
+		</table>
+	</script>
+</head>
+<body>
+	<script src="benchmark_handlebars.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+  <script src="../lib/templatez.js"></script>
+  <script type="text/javascript">
+    var currentPrice = 0;
+
+    var g_listingTZ;
+
+    function updatePrice(target) {
+      // This would obviously be done on the server, but I'll just do this for now..
+      var price = parseFloat(target.attributes.data.value);
+      currentPrice += price;
+
+      // Need to update the dom via templatez
+      // Empty the dom :(
+      document.getElementById("productListing").innerHTML = "";
+      g_listingTZ.updateData(getData());
+      g_listingTZ.appendToElementById("productListing");
+    }
+
+    function getData() {
+      return {
+        products : {
+          pickles: {
+            name: "Pickles",
+            description: "A jar of pickles!",
+            isOOS: false,
+            isOnSale: false,
+            price: 4.56,
+            id: 1
+          },
+          turkey: {
+            name: "Turkey",
+            description: "A whole 3 pound turkey!",
+            isOOS: false,
+            isOnSale: true,
+            price: 15.00,
+            id: 2
+          },
+          fish: {
+            name: "Fish",
+            description: "Tasty, yummy fish!",
+            isOOS: true,
+            isOnSale: false,
+            price: 5.00,
+            id: 3
+          }
+        },
+        cart: {
+          cartPrice: currentPrice
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="productListing">
+    <!-- template will be applied here -->
+  </div>
+</body>
+
+<script src="productListing.js"></script>
+</html>

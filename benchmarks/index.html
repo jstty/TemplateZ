@@ -1,0 +1,71 @@
+<html>
+<head>
+	<script>
+		var app = {};
+		app._startTime = performance.now();
+
+		app.tzOnLoad = function()
+		{
+			app._tzLoaded = true;
+			app._tzTime = performance.now() - app._startTime;
+			console.log("TemplateZ Time:", app._tzTime, "ms");
+
+			app.checkIfAllDone();
+		}
+
+		app.rawhtmlOnLoad = function()
+		{
+			app._rawhtmlLoaded = true;
+			app._rawhtmlTime = performance.now() - app._startTime;
+			console.log("Raw HTML Time:", app._rawhtmlTime, "ms");
+
+			app.checkIfAllDone();
+		}
+
+		app.hbOnLoad = function()
+		{
+			app._hbLoaded = true;
+			app._hbTime = performance.now() - app._startTime;
+			console.log("Handlebars Time:", app._hbTime, "ms");
+
+			app.checkIfAllDone();
+		}
+
+		app.checkIfAllDone = function()
+		{
+			if(app._rawhtmlLoaded &&
+			   app._tzLoaded &&
+			   app._hbLoaded) // all done if all loaded
+			{
+				console.log("-- All Done --");
+
+				var lowest = 10000000;
+
+				var winnerName = "";
+				if(app._tzTime < lowest)
+				{
+					winnerName = "TemplateZ";
+					lowest = app._tzTime;
+				}
+				if(app._rawhtmlTime < lowest)
+				{
+					winnerName = "Raw HTML";
+					lowest = app._rawhtmlTime;
+				}
+				if(app._hbTime < lowest)
+				{
+					winnerName = "Handlebars";
+					lowest = app._hbTime;
+				}
+
+				console.log(winnerName, "is the Winner!!! by", Math.round(10 * app._rawhtmlTime/lowest)/10, "times");
+			}
+		}
+	</script>
+</head>
+<body>
+	<iframe onload="app.tzOnLoad()" src="benchmark_tz.html"></iframe>
+	<iframe onload="app.rawhtmlOnLoad()" src="benchmark_rawhtml.html"></iframe>
+	<iframe onload="app.hbOnLoad()" src="benchmark_handlebars.html"></iframe>
+</body>
+</html>

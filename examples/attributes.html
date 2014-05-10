@@ -1,0 +1,48 @@
+<html>
+<head>
+	<script src="../lib/templatez.js"></script>
+</head>
+<body>
+	<div>
+		This is an example of dynamic attributes.
+	</div>
+	<div id="attributesTemplate">
+		<!-- template will be applied here -->
+	</div>
+</body>
+
+<script>
+var tempz = {
+	span : function(data) {
+		return "Hello "+data.name.first+" "+data.name.last;
+	},
+	$id : function(data) {
+		return data.name.first+"_"+data.name.last+"_id";
+	},
+	$style : "color:red"
+};
+
+var dataz = {
+	name: { first: "John", last: "Hall"}
+};
+/*
+The above template and data will generate this html
+
+<span id="John_Hall_id" style="color:red">Hello John Hall</span>
+
+*/
+
+// create TemplateZ object
+var TzObj = TemplateZ.create(tempz, dataz);
+
+// compiles the template in to a dom object
+/*
+var domobj = TzObj.compile();
+*/
+
+// if only the id is passed in then the template is automaticlly compiled into a cached dom object
+TzObj.appendToElementById("attributesTemplate");
+
+</script>
+
+</html>
