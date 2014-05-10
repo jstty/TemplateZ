@@ -1,0 +1,15 @@
+{
+    "name": "TemplateZ",
+    "version": "0.1.0",
+    "main": "lib/templatez.js",
+    "ignore": [
+        "node_modules",
+        ".*"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+        "mocha": "~1.18.2",
+        "chai":  "~1.9.1"
+    }
+}
