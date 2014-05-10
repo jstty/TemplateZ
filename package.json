@@ -1,28 +1,42 @@
 {
-    "name": "webserver",
-    "version": "0.0.1",
-    "description": "A basic webserver",
+    "name": "TemplateZ",
+    "version": "0.1.0",
+    "description": "JSON based template engine",
+    "keywords": [
+        "node.js",
+        "javascript",
+        "browser",
+        "template"
+    ],
     "author": {
         "name": "Joseph E. Sutton",
         "email": "joe@jstty.com",
-        "web": "http://www.jstty.om"
+        "web": "http://www.jstty.com"
+    },
+    "license": {
+        "type": "MIT"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/jstty/templatez.git"
     },
     "dependencies": {
         "connect": "~2.15.0"
     },
     "devDependencies": {
-        "bower":   "~1.3.3",
-        "chai":    "~1.9.1",
-        "mocha":   "~1.18.2",
-        "karma":   "~0.12.1",
+        "uglify-js":   "~2.4.13",
+        "bower":       "~1.3.3",
+        "chai":        "~1.9.1",
+        "mocha":       "~1.18.2",
+        "karma":       "~0.12.1",
         "karma-mocha": "~0.1.3",
-        "karma-chai": "~0.1.0",
-        "karma-chrome-launcher": "~0.1.3",
+        "karma-chai":  "~0.1.0",
+        "karma-chrome-launcher":    "~0.1.3",
         "karma-phantomjs-launcher": "~0.1.4"
     },
     "scripts": {
         "start": "node index.js",
-        "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
-        "build": ""
+        "test":  "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+        "build": "./node_modules/uglify-js/bin/uglifyjs lib/templatez.js -o lib/templatez-min.js --stats"
     }
 }
